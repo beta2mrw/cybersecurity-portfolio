@@ -1,0 +1,56 @@
+# Lab 03 – Linux Authentication Log Analysis
+
+## 1. Investigation Overview
+
+**Environment:** Simulated Linux server  
+**Log source:** auth.log  
+**Analysis platform:** macOS Terminal  
+**Tools:** grep, awk, sort, uniq
+
+## 2. Key Findings
+
+- Total failed SSH authentication attempts: 10
+- Primary suspicious source IP: 203.0.113.50
+- Failed attempts from primary source: 8
+- Additional source IP: 198.51.100.77
+- Successful SSH login following failed attempts: analyst
+- Authentication method: Password
+- Suspicious privileged activity: Attempt to read /etc/shadow using sudo
+
+## 3. Evidence
+
+The source IP 203.0.113.50 generated repeated failed login attempts against multiple usernames, including admin, root, test and analyst.
+
+After two failed attempts against analyst, authentication succeeded from the same source IP at 08:16:10.
+
+A session was opened for analyst at 08:16:11.
+
+At 08:18:45, analyst executed the `id` command using sudo.
+
+At 08:19:02, analyst executed `cat /etc/shadow` using sudo.
+
+## 4. Security Assessment
+
+The authentication sequence is consistent with possible password-guessing activity followed by successful account access.
+
+The subsequent privileged activity, particularly the attempt to read /etc/shadow, increases the security concern.
+
+However, the available logs do not conclusively establish unauthorized access or credential compromise.
+
+## 5. Recommended Response Actions
+
+1. Validate whether the successful login from 203.0.113.50 was authorized.
+2. Review the analyst account's recent authentication history.
+3. Investigate the source IP using trusted threat intelligence sources.
+4. If unauthorized access is confirmed, disable or restrict the affected account.
+5. Rotate potentially compromised credentials.
+6. Review sudo permissions and access to sensitive files.
+7. Preserve relevant logs for further investigation.
+
+## 6. Conclusion
+
+The investigation identified suspicious SSH authentication activity followed by a successful password login and privileged command execution.
+
+The event warrants further investigation to determine whether the analyst account was compromised.
+
+**Dataset classification:** Simulated training data. All IP addresses are reserved documentation addresses and do not identify real attackers.

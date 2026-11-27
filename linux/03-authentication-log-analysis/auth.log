@@ -1,0 +1,20 @@
+Nov 27 08:02:11 linux-server sshd[1021]: Accepted publickey for analyst from 192.0.2.10 port 50422 ssh2
+Nov 27 08:02:12 linux-server sshd[1021]: pam_unix(sshd:session): session opened for user analyst(uid=1000)
+Nov 27 08:15:03 linux-server sshd[1088]: Failed password for invalid user admin from 203.0.113.50 port 42110 ssh2
+Nov 27 08:15:06 linux-server sshd[1090]: Failed password for invalid user admin from 203.0.113.50 port 42114 ssh2
+Nov 27 08:15:09 linux-server sshd[1092]: Failed password for invalid user admin from 203.0.113.50 port 42118 ssh2
+Nov 27 08:15:12 linux-server sshd[1094]: Failed password for root from 203.0.113.50 port 42122 ssh2
+Nov 27 08:15:15 linux-server sshd[1096]: Failed password for root from 203.0.113.50 port 42126 ssh2
+Nov 27 08:15:18 linux-server sshd[1098]: Failed password for invalid user test from 203.0.113.50 port 42130 ssh2
+Nov 27 08:16:01 linux-server sshd[1102]: Failed password for analyst from 203.0.113.50 port 42134 ssh2
+Nov 27 08:16:05 linux-server sshd[1104]: Failed password for analyst from 203.0.113.50 port 42138 ssh2
+Nov 27 08:16:10 linux-server sshd[1106]: Accepted password for analyst from 203.0.113.50 port 42142 ssh2
+Nov 27 08:16:11 linux-server sshd[1106]: pam_unix(sshd:session): session opened for user analyst(uid=1000)
+Nov 27 08:18:45 linux-server sudo: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/id
+Nov 27 08:18:46 linux-server sudo: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1000)
+Nov 27 08:19:02 linux-server sudo: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Nov 27 08:19:03 linux-server sudo: pam_unix(sudo:session): session closed for user root
+Nov 27 08:22:17 linux-server sshd[1130]: Accepted publickey for backup from 192.0.2.25 port 53100 ssh2
+Nov 27 08:22:18 linux-server sshd[1130]: pam_unix(sshd:session): session opened for user backup(uid=1001)
+Nov 27 08:30:44 linux-server sshd[1152]: Failed password for invalid user guest from 198.51.100.77 port 60110 ssh2
+Nov 27 08:30:47 linux-server sshd[1154]: Failed password for invalid user guest from 198.51.100.77 port 60114 ssh2
